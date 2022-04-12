@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'includes/header.html' %}
+<h1>Buscar marcas</h1>
+<form method="get">{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Ingrese la marca aqui">
+    <button type="submit" class="submit success button">Buscar</button>
+</form>
+<div class="cell">
+    <table>
+        <thead>
+          <tr>
+            <th width="200">MATRICULA</th>
+            <th>FECHA</th>
+            <th width="150">MARCA</th>
+            <th width="150">MODELO</th>
+            <th width="150">ACCIÓN</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for e in marca %}
+          <tr>
+            <td>{{ e.matr }}</td>
+            <td>{{ e.fecha }}</td>
+            <td>{{ e.marca }}</td>
+            <td>{{ e.modelo }}</td>
+            <td><a class="button warning" href="{% url 'coche_app:coche_detail' e.id %}">Ver</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+<h3>Lista resultado</h3>
+<ul>
+    
+    {% for e in marca %}
+        <li>{{e}}</li>
+    {% endfor %}
+        
+</ul>
+{% endblock content %}

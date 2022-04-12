@@ -1,0 +1,20 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Coches</li>
+        <li>
+          <a href="{% url 'coche_app:coches_all' %}">Listar</a>
+        </li>
+        <li><a href="{% url 'coche_app:coche_add' %}">Insertar Coche</a></li>
+        <li><a href="{% url 'marca_app:marca_add' %}">Marca</a></li>
+        <li><a href="{% url 'modelo_app:modelo_add' %}">Modelo</a></li>
+        <li><a href="{% url 'coche_app:buscar_por_marca' %}">Buscar por marca</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Buscar coche"></li>
+        <li><button type="button" class="button">Registrar Nuevo</button></li>
+      </ul>
+    </div>
+  </div>

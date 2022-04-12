@@ -1,0 +1,18 @@
+<h1>Registrar nuevo coche</h1>
+
+<form method="POST">{% csrf_token %}
+    <h3>Datos coche</h3>
+    <p>
+        {{form.matr}}
+    </p>
+    <p>
+        {{form.fecha}}
+    </p>
+    <p>
+        {{form.marca}}
+    </p>
+    <p>
+        {{form.modelo}}
+    </p>
+    <button type="submit">Guardar</button>
+</form>
